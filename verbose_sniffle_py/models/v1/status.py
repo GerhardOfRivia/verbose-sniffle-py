@@ -5,7 +5,7 @@ import enum
 from pydantic import BaseModel
 
 
-class SystemStatus(enum.StrEnum):
+class SystemStatus(enum.Enum):
     PASS = enum.auto()
     FAIL = enum.auto()
 

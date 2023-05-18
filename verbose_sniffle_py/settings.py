@@ -6,7 +6,7 @@ import enum
 from pydantic import BaseSettings
 
 
-class Environment(enum.StrEnum):
+class Environment(enum.Enum):
     PROD = enum.auto()
     TEST = enum.auto()
 

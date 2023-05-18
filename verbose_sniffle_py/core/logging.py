@@ -1,17 +1,13 @@
 #!/usr/bin/env python
 # vim: tabstop=8 expandtab shiftwidth=4 softtabstop=4
 
-
 import os
 import yaml
 import logging.config
 import logging
 
 
-def setup_logging(
-    default_path="log-config.yaml", default_level=logging.INFO, env_key="LOG_CFG"
-):
-    """"""
+def setup_logging(default_path="log-config.yaml", default_level=logging.INFO, env_key="LOG_CFG"):
     path = os.getenv(env_key, None) or default_path
     if os.path.exists(path):
         with open(path, "rt") as f:
