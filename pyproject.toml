@@ -8,7 +8,15 @@ packages = [{include = "verbose_sniffle_py"}]
 
 [tool.poetry.dependencies]
 python = "^3.8"
+pydantic = "^1.10.7"
+uvicorn = "^0.22.0"
+fastapi = "^0.95.2"
+pyyaml = "^6.0"
 
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.0.267"
+black = "^23.3.0"
 
 [build-system]
 requires = ["poetry-core"]
