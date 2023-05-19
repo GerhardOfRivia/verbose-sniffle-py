@@ -33,7 +33,5 @@ app = FastAPI(
 app.include_router(v1_router)
 
 uvicorn.run(
-    app=app,
-    host=SETTINGS.APP_HOST,
-    port=SETTINGS.APP_PORT,
+    app=app, host=SETTINGS.APP_HOST, port=SETTINGS.APP_PORT,
 )

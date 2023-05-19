@@ -4,8 +4,10 @@
 import enum
 from pydantic import BaseModel
 
+from verbose_sniffle_py.core.enum import AutoEnum
 
-class SystemStatus(enum.Enum):
+
+class SystemStatus(AutoEnum):
     PASS = enum.auto()
     FAIL = enum.auto()
 
