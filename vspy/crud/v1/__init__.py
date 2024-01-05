@@ -36,7 +36,7 @@ def get_tasks(db: Session, skip: int = 0, limit: int = 100):
 
 
 def create_task(db: Session, task: schemas.TaskBase):
-    db_task = models.Task(subject=task.subject, user_id=task.user)
+    db_task = models.Task(subject=task.subject, user=task.user)
     db.add(db_task)
     db.commit()
     db.refresh(db_task)

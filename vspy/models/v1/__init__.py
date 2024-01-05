@@ -18,7 +18,7 @@ class Task(Base):
     __tablename__ = "tasks"
 
     id = Column(Integer, primary_key=True, index=True)
-    user_id = Column(Integer, index=True)
+    user = Column(Integer, index=True)
     subject = Column(String, index=True)
     complete = Column(Boolean, default=False)
     created = Column(Integer, default=lambda: datetime.utcnow().timestamp())

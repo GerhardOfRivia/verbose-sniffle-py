@@ -46,7 +46,7 @@ def read_user(user_id: int, db: Session = Depends(get_db)):
 @router.post("/tasks/", response_model=schemas.Task)
 def create_task(task: schemas.TaskBase, db: Session = Depends(get_db)):
     db_user = crud.get_user(db, user_id=task.user)
-    if db_user:
+    if db_user is None:
         raise HTTPException(status_code=400, detail="Invalid User")
     return crud.create_task(db=db, task=task)
 
