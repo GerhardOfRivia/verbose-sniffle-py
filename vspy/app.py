@@ -1,16 +1,14 @@
-#!/usr/bin/env python3
-# vim: tabstop=8 expandtab shiftwidth=4 softtabstop=4
-
 import uvicorn
 
 from fastapi import FastAPI
 from fastapi.middleware import Middleware
 from fastapi.middleware.cors import CORSMiddleware
 
-from verbose_sniffle_py.api.v1 import router as v1_router
-from verbose_sniffle_py.dependencies import dependencies
-from verbose_sniffle_py.settings import SETTINGS
+from vspy.api.v1 import router as v1_router
+from vspy.core.logging import setup_logging
+from vspy.settings import SETTINGS
 
+setup_logging()
 
 middleware = Middleware(
     CORSMiddleware,
@@ -22,11 +20,10 @@ middleware = Middleware(
 
 app = FastAPI(
     title="verbose-sniffle-py",
-    description="verbose-sniffle-py fastapi example",
+    description="fastapi sqlite project",
     version="1.0.0",
     docs_url="/docs",
     redoc_url="/redoc",
-    dependencies=dependencies,
     middleware=[middleware],
 )
 

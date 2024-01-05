@@ -1,6 +1,3 @@
-#!/usr/bin/env python
-# vim: tabstop=8 expandtab shiftwidth=4 softtabstop=4
-
 import os
 import yaml
 import logging.config
@@ -21,3 +18,4 @@ def setup_logging(default_path="log-config.yaml", default_level=logging.INFO, en
     else:
         logging.basicConfig(level=default_level)
         print("Failed to load configuration file. Using default configs")
+
